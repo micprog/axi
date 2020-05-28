@@ -40,7 +40,7 @@ exec_test() {
     case "$1" in
         axi_atop_filter)
             for MAX_TXNS in 1 3 12; do
-                call_vsim tb_axi_atop_filter -GN_TXNS=1000 -GAXI_MAX_WRITE_TXNS=$MAX_TXNS
+                call_vsim tb_axi_atop_filter -GTB_N_TXNS=1000 -GTB_AXI_MAX_WRITE_TXNS=$MAX_TXNS
             done
             ;;
         axi_cdc|axi_delayer)
@@ -53,8 +53,8 @@ exec_test() {
                         AxiMstPortDataWidth *= 2 )); \
                 do
                     call_vsim tb_axi_dw_downsizer \
-                            -GAxiSlvPortDataWidth=$AxiSlvPortDataWidth \
-                            -GAxiMstPortDataWidth=$AxiMstPortDataWidth -t 1ps
+                            -GTbAxiSlvPortDataWidth=$AxiSlvPortDataWidth \
+                            -GTbAxiMstPortDataWidth=$AxiMstPortDataWidth -t 1ps
                 done
             done
             ;;
@@ -65,8 +65,8 @@ exec_test() {
                         AxiMstPortDataWidth *= 2 )); \
                 do
                     call_vsim tb_axi_dw_upsizer \
-                            -GAxiSlvPortDataWidth=$AxiSlvPortDataWidth \
-                            -GAxiMstPortDataWidth=$AxiMstPortDataWidth -t 1ps
+                            -GTbAxiSlvPortDataWidth=$AxiSlvPortDataWidth \
+                            -GTbAxiMstPortDataWidth=$AxiMstPortDataWidth -t 1ps
                 done
             done
             ;;
