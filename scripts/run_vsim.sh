@@ -75,8 +75,8 @@ exec_test() {
             for PRIV in 0 1; do
                 for SECU in 0 1; do
                     for BYTES in 42 200 369; do
-                        call_vsim tb_axi_lite_regs -gPrivProtOnly=$PRIV -gSecuProtOnly=$SECU \
-                                -gRegNumBytes=$BYTES -t 1ps
+                        call_vsim tb_axi_lite_regs -GTbPrivProtOnly=$PRIV -GTbSecuProtOnly=$SECU \
+                                -GTbRegNumBytes=$BYTES -t 1ps
                     done
                 done
             done
