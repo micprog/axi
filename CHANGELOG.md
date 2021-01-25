@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 - `axi_test::axi_rand_master`: Randomize the QoS field.
 - Update `common_cells` dependency to `1.20.1` to fix out-of-bounds index in `axi_burst_splitter`
   (#150).
+- `axi_xbar`: Flatten and update parameter and ports according to (#153). Add inline documentation.
 
 ### Fixed
 
